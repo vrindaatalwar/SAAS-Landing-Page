@@ -334,7 +334,11 @@ const SkeletonFive = () => {
             <motion.div
                 variants={variants}
                 className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
+                <img
+                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="User"
+                    className="h-10 w-10 rounded-full object-cover shrink-0"
+                />
                 <p className="text-xs text-neutral-500">
                     Inventory levels for SKU-129 are critically low. Predicted stockout in 48 hours.
                 </p>
@@ -343,8 +347,11 @@ const SkeletonFive = () => {
                 variants={variantsSecond}
                 className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
                 <p className="text-xs text-neutral-500">Initiating Reorder.</p>
-                <div
-                    className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
+                <img
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="User"
+                    className="h-6 w-6 rounded-full object-cover shrink-0"
+                />
             </motion.div>
         </motion.div>
     );
