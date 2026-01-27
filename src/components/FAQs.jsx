@@ -35,7 +35,7 @@ export default function FAQs() {
             <div className="mx-auto max-w-5xl px-4 md:px-6">
                 <div className="text-center">
                     <h2 className="text-4xl font-semibold">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-white to-gray-600">
+                        <span className="bg-clip-text text-transparent text-white">
                             Frequently Asked Questions
                         </span>
                     </h2>

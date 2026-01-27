@@ -12,8 +12,8 @@ export function TestimonialsSection({ title, description, testimonials }) {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">Trusted by </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-white to-gray-600">
+            <span className="text-zinc-300">Trusted by </span>
+            <span className="bg-clip-text text-white">
               Leading Retailers
             </span>
           </h2>

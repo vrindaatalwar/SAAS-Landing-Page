@@ -50,8 +50,8 @@ const Pipeline = () => {
         <section id="how-it-works" className="py-20 relative overflow-hidden bg-[#0A0A0A]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">
-                        From Raw Data to <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-white to-gray-600">Immutable Truth.</span>
+                    <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-zinc-300">
+                        From Raw Data to <span className="bg-clip-text text-white">Immutable Truth.</span>
                     </h2>
                     <p className="text-[#999999] max-w-2xl mx-auto">
                         Our pipeline ensures that every prediction is not only accurate but also verifiable and actionable.

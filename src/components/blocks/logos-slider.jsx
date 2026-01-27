@@ -34,23 +34,23 @@ export function LogosSlider() {
     <section className="py-20 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">
-            Powered by <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-white to-gray-600">Industry Leaders</span>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-zinc-300">
+            Powered by <span className="bg-clip-text text-white">Industry Leaders</span>
           </h2>
           <p className="text-[#999999] max-w-2xl mx-auto">
             Built with cutting-edge technology from the world's most trusted platforms
           </p>
         </div>
-        
+
         <div className='relative h-[100px] w-full overflow-hidden'>
-          <InfiniteSlider 
-            className='flex h-full w-full items-center' 
+          <InfiniteSlider
+            className='flex h-full w-full items-center'
             duration={30}
             gap={48}
           >
             {logos.map((logo) => (
-              <div 
-                key={logo.id} 
+              <div
+                key={logo.id}
                 className='flex w-32 items-center justify-center'
               >
                 <img

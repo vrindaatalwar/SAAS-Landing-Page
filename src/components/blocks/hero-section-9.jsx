@@ -17,7 +17,7 @@ export const HeroSection = () => {
         <div>
             {/* Floating Navbar */}
             <FloatingNav navItems={menuItems} />
-            
+
             <main>
                 <div
                     aria-hidden
@@ -38,13 +38,13 @@ export const HeroSection = () => {
                     <div className="relative mx-auto max-w-7xl px-6 pt-40 pb-28 lg:pt-36 lg:pb-24">
                         <div className="relative z-10 mx-auto max-w-3xl text-center">
                             <h1 className="text-balance text-4xl font-bold md:text-5xl lg:text-7xl tracking-tight">
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-white to-gray-600">
+                                <span className="bg-clip-text text-white">
                                     Predict Demand.
                                 </span> <br />
                                 <span className="text-white">
                                     Retain Customers.
                                 </span> <br />
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-white to-gray-600">
+                                <span className="bg-clip-text text-white">
                                     Verify Trust.
                                 </span>
                             </h1>
@@ -73,9 +73,9 @@ export const HeroSection = () => {
                             className="[perspective:1200px] [mask-image:linear-gradient(to_right,black_50%,transparent_100%)] -mr-16 pl-16 lg:-mr-56 lg:pl-56">
                             <div className="[transform:rotateX(20deg);]">
                                 <div className="lg:h-[44rem] relative skew-x-[.36rad] bg-[#1E1E1E] border border-[#2E2E2E] rounded-xl overflow-hidden">
-                                    <img 
-                                        src="/dashboard-preview.png" 
-                                        alt="Dashboard Preview" 
+                                    <img
+                                        src="/dashboard-preview.png"
+                                        alt="Dashboard Preview"
                                         className="w-full h-full object-cover opacity-80"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/60" />

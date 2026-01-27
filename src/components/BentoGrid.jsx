@@ -16,8 +16,8 @@ export default function BentoGridSection() {
     return (
         <section id="features" className="py-20 bg-[#0A0A0A]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-                <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">
-                    One Platform. <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-white to-gray-600">Five Department Views.</span>
+                <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-zinc-300">
+                    One Platform. <span className="bg-clip-text text-transparent text-white">Five Department Views.</span>
                 </h2>
                 <p className="text-[#999999] max-w-2xl mx-auto">
                     Unified intelligence for your entire organization. From marketing to finance, everyone gets the data they need.
@@ -54,47 +54,53 @@ const SkeletonOne = () => {
         return { x, y, ...segment };
     });
 
-    const pathData = points.map((p, i) => 
+    const pathData = points.map((p, i) =>
         `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`
     ).join(' ');
+
+    const [hoveredSegment, setHoveredSegment] = React.useState(null);
 
     return (
         <motion.div
             initial="initial"
             whileHover="hover"
-            className="flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-[#1E1E1E] to-[#0A0A0A] rounded-lg p-4 flex-col">
+            className="flex flex-1 w-full h-full min-h-[6rem] bg-gradient-to-br from-[#1E1E1E] to-[#0A0A0A] rounded-lg p-4 flex-col relative">
             <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="none">
                 {/* Grid lines */}
                 {[0, 25, 50, 75, 100].map((y) => (
                     <line key={y} x1="0" y1={y} x2="100" y2={y} stroke="#2E2E2E" strokeWidth="0.5" />
                 ))}
-                
+
                 {/* Gradient area under line */}
                 <motion.path
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.3 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.5 }}
                     d={`${pathData} L 100 100 L 0 100 Z`}
                     fill="url(#gradient)" />
-                
+
                 {/* Main line */}
                 <motion.path
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
                     d={pathData}
                     fill="none"
                     stroke="url(#lineGradient)"
                     strokeWidth="2"
                     strokeLinecap="round" />
-                
+
                 {/* Data points */}
                 {points.map((point, i) => (
-                    <motion.g key={i}>
+                    <motion.g key={i}
+                        onMouseEnter={() => setHoveredSegment(point)}
+                        onMouseLeave={() => setHoveredSegment(null)}
+                    >
                         <motion.circle
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
-                            transition={{ delay: 0.5 + i * 0.1, duration: 0.3 }}
+                            whileHover={{ scale: 1.5 }}
+                            transition={{ delay: 0.2 + i * 0.05, duration: 0.3 }}
                             cx={point.x}
                             cy={point.y}
                             r="2"
@@ -102,15 +108,17 @@ const SkeletonOne = () => {
                             className="cursor-pointer" />
                         <motion.circle
                             initial={{ scale: 0 }}
-                            whileHover={{ scale: 1.5 }}
+                            whileHover={{ scale: 2, opacity: 0.5 }}
+                            transition={{ duration: 0.2 }}
                             cx={point.x}
                             cy={point.y}
-                            r="1.5"
-                            fill="white"
+                            r="4"
+                            fill={point.color}
+                            opacity="0"
                             className="cursor-pointer" />
                     </motion.g>
                 ))}
-                
+
                 <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                         <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.5" />
@@ -125,9 +133,30 @@ const SkeletonOne = () => {
                     </linearGradient>
                 </defs>
             </svg>
+
+            {/* Tooltip */}
+            {hoveredSegment && (
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-2 right-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-lg p-2 text-xs z-10 shadow-xl">
+                    <div className="flex items-center gap-2 mb-1">
+                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: hoveredSegment.color }} />
+                        <span className="font-semibold text-white">{hoveredSegment.label}</span>
+                    </div>
+                    <div className="text-zinc-400 pl-4">
+                        {hoveredSegment.value}% of users
+                    </div>
+                </motion.div>
+            )}
+
             <div className="flex justify-between mt-2 text-[9px] text-[#999999]">
                 {segments.map((segment, i) => (
-                    <span key={i} className="flex-1 text-center">{segment.label}</span>
+                    <span key={i} className={`flex-1 text-center transition-colors ${hoveredSegment?.label === segment.label ? 'text-white font-medium' : ''}`}>
+                        {segment.label}
+                    </span>
                 ))}
             </div>
         </motion.div>
@@ -142,9 +171,9 @@ const SkeletonTwo = () => {
         { week: 5, value: 72 },
         { week: 6, value: 88 },
     ];
-    
+
     const maxValue = Math.max(...data.map(d => d.value));
-    
+
     return (
         <motion.div
             initial="initial"
@@ -156,7 +185,7 @@ const SkeletonTwo = () => {
                     <motion.div
                         key={"chart-bar-" + i}
                         initial={{ height: 0 }}
-                        animate={{ 
+                        animate={{
                             height: `${(item.value / maxValue) * 100}%`,
                         }}
                         transition={{
@@ -185,18 +214,18 @@ const SkeletonTwo = () => {
 };
 const SkeletonThree = () => {
     const messages = [
-        { 
-            type: "user", 
+        {
+            type: "user",
             text: "Show me top insights",
             time: "Just now"
         },
-        { 
-            type: "ai", 
+        {
+            type: "ai",
             text: "Revenue up 23% vs last quarter. Champions segment growing.",
             time: "2s ago"
         },
-        { 
-            type: "ai", 
+        {
+            type: "ai",
             text: "SKU-129 stockout risk in 4 days. Recommend reorder.",
             time: "2s ago"
         },
@@ -218,11 +247,10 @@ const SkeletonThree = () => {
                         ease: "easeOut"
                     }}
                     className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}>
-                    <div className={`max-w-[85%] rounded-lg p-2 ${
-                        message.type === "user" 
-                            ? "bg-gradient-to-r from-violet-500 to-pink-500" 
-                            : "bg-white dark:bg-black border border-neutral-100 dark:border-white/[0.2]"
-                    }`}>
+                    <div className={`max-w-[85%] rounded-lg p-2 ${message.type === "user"
+                        ? "bg-gradient-to-r from-violet-500 to-pink-500"
+                        : "bg-white dark:bg-black border border-neutral-100 dark:border-white/[0.2]"
+                        }`}>
                         <p className={`text-xs ${message.type === "user" ? "text-white" : "text-neutral-700 dark:text-neutral-300"}`}>
                             {message.text}
                         </p>

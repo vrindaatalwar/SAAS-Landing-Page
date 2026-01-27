@@ -49,7 +49,7 @@ const testimonials = [
 
 function App() {
   return (
-    <motion.div 
+    <motion.div
       className="min-h-screen bg-[#0A0A0A] text-white transition-colors duration-300 font-sans selection:bg-white/20"
       initial={{ filter: "blur(10px)", opacity: 0 }}
       animate={{ filter: "blur(0px)", opacity: 1 }}
@@ -59,7 +59,7 @@ function App() {
       <LogosSlider />
       <BentoGrid />
       <Pipeline />
-      <TestimonialsSection 
+      <TestimonialsSection
         title="Trusted by Leading Retailers"
         description="See how ChainForecast is transforming inventory management and demand forecasting across the retail industry"
         testimonials={testimonials}
