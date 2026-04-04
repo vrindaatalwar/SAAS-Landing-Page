@@ -1,73 +1,51 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { HeroSection } from './components/blocks/hero-section-9';
-import BentoGrid from './components/BentoGrid';
-import Pipeline from './components/Pipeline';
-import { LogosSlider } from './components/blocks/logos-slider';
-import { TestimonialsSection } from './components/blocks/testimonials-with-marquee';
-import FAQs from './components/FAQs';
-import Footer from './components/Footer';
+import { motion, AnimatePresence } from 'framer-motion';
+import Navbar from './components/interfere/Navbar';
+import Hero from './components/interfere/Hero';
+import ValueProp from './components/interfere/ValueProp';
+import FeatureDeepDives from './components/interfere/FeatureDeepDives';
+import QuoteSection from './components/interfere/QuoteSection';
 
-const testimonials = [
-  {
-    name: "Sarah Chen",
-    role: "VP of Operations, RetailCo",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-    testimonial: "ChainForecast transformed our inventory management. The Prophet AI predictions reduced stockouts by 40% and cut excess inventory by 25%. The blockchain audit trail gave our stakeholders complete confidence in our demand forecasting."
-  },
-  {
-    name: "Marcus Johnson",
-    role: "Chief Data Officer, MegaMart",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
-    testimonial: "The RFM segmentation paired with AI-driven bundling recommendations increased our average order value by 32%. What sets ChainForecast apart is the immutable record of every forecast—our board loves the transparency."
-  },
-  {
-    name: "Priya Patel",
-    role: "Analytics Director, FashionHub",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Priya",
-    testimonial: "Implementing ChainForecast was seamless. Within weeks, we saw dramatic improvements in seasonal demand planning. The blockchain verification ensures our stakeholders can audit every prediction and recommendation with full traceability."
-  },
-  {
-    name: "David Kim",
-    role: "CEO, GroceryPlus",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
-    testimonial: "This platform is a game-changer. The combination of Prophet forecasting and blockchain transparency solved our biggest pain points: inaccurate predictions and lack of accountability. ROI was positive in under 6 months."
-  },
-  {
-    name: "Elena Rodriguez",
-    role: "Supply Chain Manager, TechRetail",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena",
-    testimonial: "ChainForecast's smart contract integration with our CRM was revolutionary. Every customer interaction now feeds into verifiable demand signals. The audit trail has become essential for our quarterly reviews."
-  },
-  {
-    name: "James Wilson",
-    role: "Head of Analytics, ShopSmart",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=James",
-    testimonial: "The AI models are incredibly accurate, but what really impressed us was the blockchain layer. For the first time, we can prove to investors exactly how we arrived at each forecast. It's changed how we communicate business intelligence."
-  }
-];
+import ChangelogSection from './components/interfere/ChangelogSection';
+import Footer from './components/interfere/Footer';
 
 function App() {
   return (
-    <motion.div
-      className="min-h-screen bg-[#0A0A0A] text-white transition-colors duration-300 font-sans selection:bg-white/20"
-      initial={{ filter: "blur(10px)", opacity: 0 }}
-      animate={{ filter: "blur(0px)", opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <HeroSection />
-      <LogosSlider />
-      <BentoGrid />
-      <Pipeline />
-      <TestimonialsSection
-        title="Trusted by Leading Retailers"
-        description="See how ChainForecast is transforming inventory management and demand forecasting across the retail industry"
-        testimonials={testimonials}
-      />
-      <FAQs />
-      <Footer />
-    </motion.div>
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white font-sans antialiased animate-in">
+      <AnimatePresence mode="wait">
+        <motion.div>
+          <Navbar />
+          <main>
+             <Hero />
+             <ValueProp />
+             <QuoteSection />
+             <FeatureDeepDives />
+             
+             <ChangelogSection />
+
+             {/* Middle CTA Section - Build software that never breaks */}
+             <section className="py-40 bg-zinc-50/50 border-y border-slate-100 text-center overflow-hidden">
+                <div className="max-w-5xl mx-auto px-6">
+                   <h2 className="text-5xl md:text-8xl font-bold tracking-tight text-slate-900 leading-none mb-12">
+                     Build software that <br /> never <span className="font-serif italic font-normal tracking-wide">breaks</span>
+                   </h2>
+                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                      <button className="px-8 py-3 bg-white border border-slate-200 text-slate-900 rounded-xl font-medium hover:bg-slate-50 transition-colors shadow-sm">
+                         Join waitlist
+                      </button>
+                      <button className="px-8 py-3 bg-black text-white rounded-xl font-medium hover:bg-slate-800 transition-colors shadow-lg">
+                         Request a demo
+                      </button>
+                   </div>
+                </div>
+             </section>
+          </main>
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }
 
 export default App;
+

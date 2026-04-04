@@ -1,6 +1,8 @@
+import tailwindAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
-	darkMode: ['class', 'class'],
+	darkMode: ['class'],
 	content: [
 		"./index.html",
 		"./src/**/*.{js,ts,jsx,tsx}",
@@ -10,29 +12,6 @@ export default {
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				cyan: {
-					DEFAULT: '#61DAFB',
-					light: '#8BE5FF',
-					dark: '#3AC5E8'
-				},
-				blue: {
-					DEFAULT: '#646CFF',
-					light: '#8B92FF',
-					dark: '#4148CC'
-				},
-				slate: {
-					'50': '#F8FAFC',
-					'100': '#F1F5F9',
-					'200': '#E2E8F0',
-					'300': '#CBD5E1',
-					'400': '#94A3B8',
-					'500': '#64748B',
-					'600': '#475569',
-					'700': '#334155',
-					'800': '#1E293B',
-					'900': '#0F172A',
-					'950': '#020617'
-				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -76,6 +55,10 @@ export default {
 				sans: [
 					'Inter',
 					'sans-serif'
+				],
+				serif: [
+					'EB Garamond',
+					'serif'
 				]
 			},
 			animation: {
@@ -135,21 +118,7 @@ export default {
 					to: {
 						height: '0'
 					}
-				},
-				spotlight: {
-					'0%': {
-						opacity: '0',
-						transform: 'translate(-72%, -62%) scale(0.5)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translate(-50%,-40%) scale(1)'
-					}
 				}
-			},
-			animation: {
-				marquee: 'marquee var(--duration) infinite linear',
-				spotlight: 'spotlight 2s ease .75s 1 forwards'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -158,5 +127,7 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindAnimate],
 }
+
+
