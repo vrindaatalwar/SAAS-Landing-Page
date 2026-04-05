@@ -22,7 +22,7 @@ const Hero = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-4xl md:text-5xl lg:text-[64px] font-bold tracking-tighter text-slate-900 leading-[0.95]"
             >
-              Build software <br /> that never <span className="font-serif italic font-normal tracking-wide">breaks</span>
+              Build software <br /> that never <span className="font-serif italic font-normal tracking-tight">breaks</span>
             </motion.h1>
 
             <motion.div

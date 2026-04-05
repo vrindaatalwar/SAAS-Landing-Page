@@ -66,7 +66,8 @@ export default {
 				'slide-up': 'slideUp 0.5s ease-out forwards',
 				'marquee': 'marquee var(--duration) linear infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shimmer': 'shimmer 8s linear infinite'
 			},
 			keyframes: {
 				fadeIn: {
@@ -117,6 +118,14 @@ export default {
 					},
 					to: {
 						height: '0'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						'background-position': '200% 0'
+					},
+					'100%': {
+						'background-position': '-200% 0'
 					}
 				}
 			},
