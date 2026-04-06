@@ -31,6 +31,7 @@ interface Step {
   title: string
   description: string
   content: React.ReactNode
+  icon?: React.ReactNode
 }
 
 interface FeatureCarouselProps {
@@ -186,7 +187,7 @@ function FeatureCard({
                 transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 className="space-y-6"
               >
-                <div className="text-sky-600 font-mono text-sm tracking-widest uppercase">
+                <div className="text-sky-600 font-bold text-xs tracking-wide uppercase">
                   Pillar 0{currentStep + 1}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
@@ -229,54 +230,61 @@ function StepsNav({
 }) {
   return (
     <nav aria-label="Progress" className="flex justify-center mt-6 px-4">
-      <ol
-        className="flex w-full flex-wrap items-center justify-center gap-3"
-        role="list"
-      >
+      <div className="flex w-full flex-wrap items-center justify-center gap-3 relative">
         {stepData.map((step, stepIdx) => {
-          const isCompleted = current > stepIdx
           const isCurrent = current === stepIdx
-          const isFuture = !isCompleted && !isCurrent
 
           return (
-            <motion.li
+            <li
               key={`${step.name}-${stepIdx}`}
-              initial="inactive"
-              animate={isCurrent ? "active" : "inactive"}
-              variants={stepVariants}
-              transition={{ duration: 0.3 }}
-              className={cn(
-                "relative z-50 rounded-full px-4 py-2 transition-all duration-300 ease-in-out cursor-pointer",
-                isCurrent ? "bg-sky-500/10 border border-sky-500/20" : "bg-black/5 border border-black/5 hover:bg-black/10"
-              )}
+              className="relative z-10 list-none group"
               onClick={() => onChange(stepIdx)}
             >
-              <div className="flex items-center gap-3">
-                <span
-                  className={cn(
-                    "flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold duration-300",
-                    isCurrent ? "bg-sky-500 text-white" : "bg-black/10 text-slate-600"
-                  )}
-                >
-                  {isCompleted ? (
-                    <IconCheck className="h-3 w-3" />
-                  ) : (
-                    <span>{stepIdx + 1}</span>
-                  )}
-                </span>
-                <span
-                  className={cn(
-                    "text-xs font-bold uppercase tracking-widest duration-300",
-                    isCurrent ? "text-sky-600" : "text-slate-600"
-                  )}
-                >
-                  {step.name}
-                </span>
+              <div
+                className={cn(
+                  "relative z-50 p-2 cursor-pointer flex items-center justify-center rounded-full overflow-visible",
+                  !isCurrent && "hover:bg-black/[0.03] scale-100 hover:scale-110 active:scale-95 transition-transform duration-300"
+                )}
+              >
+                {/* Active Highlight Background (Circular) */}
+                {isCurrent && (
+                  <motion.div
+                    layoutId="active-circle"
+                    className="absolute inset-0 bg-sky-500/10 border border-sky-500/20 rounded-full z-0"
+                    transition={{ type: "spring", stiffness: 180, damping: 28, mass: 0.5 }}
+                  />
+                )}
+
+                {/* Pulsing Ring for Active State */}
+                {isCurrent && (
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0.5 }}
+                    animate={{ scale: [1, 1.5], opacity: [0.4, 0] }}
+                    transition={{ 
+                      repeat: Infinity, 
+                      duration: 2.2, 
+                      ease: "easeInOut" 
+                    }}
+                    className="absolute inset-0 bg-sky-400 rounded-full z-[-1]"
+                  />
+                )}
+
+                <div className="relative z-10 flex items-center">
+                  <motion.span
+                    animate={isCurrent ? { scale: 1.3, backgroundColor: "#0ea5e9" } : { scale: 1, backgroundColor: "rgba(0,0,0,0.08)" }}
+                    transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+                    className={cn(
+                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[10px] font-bold text-white shadow-md"
+                    )}
+                  >
+                    {step.icon || <span>{stepIdx + 1}</span>}
+                  </motion.span>
+                </div>
               </div>
-            </motion.li>
+            </li>
           )
         })}
-      </ol>
+      </div>
     </nav>
   )
 }
