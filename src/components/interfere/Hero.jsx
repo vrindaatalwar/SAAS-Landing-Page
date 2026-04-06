@@ -7,10 +7,6 @@ const Hero = () => {
 
   return (
     <section className="relative pt-48 pb-20 px-6 bg-white overflow-hidden min-h-screen flex flex-col items-center">
-      {/* Background Glows */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-pink-100/30 rounded-full blur-[120px] -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-sky-100/30 rounded-full blur-[100px] -z-10" />
-      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-50/20 rounded-full blur-[140px] -z-10" />
 
       <div className="max-w-[1600px] mx-auto w-full">
         <div className="max-w-7xl mx-auto mb-20">

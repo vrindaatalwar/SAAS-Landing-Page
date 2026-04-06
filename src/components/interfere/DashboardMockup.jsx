@@ -73,7 +73,7 @@ const DashboardMockup = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-[1440px] mx-auto rounded-3xl border border-slate-200 bg-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden flex h-[900px]"
+      className="w-full max-w-[1440px] mx-auto rounded-3xl border border-slate-200 bg-white shadow-[0_48px_80px_-16px_rgba(56,189,248,0.15),0_0_48px_rgba(56,189,248,0.3)] overflow-hidden flex h-[900px]"
     >
       <div className="flex w-full h-full"> 
         {/* Sidebar (Logo Only, No Nav) */}
