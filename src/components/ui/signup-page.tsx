@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import logo from '@/assets/chainforcastlogo.png'
 import type { SVGProps } from "react";
 import { CheckCircle2 } from "lucide-react";
 
@@ -270,9 +271,12 @@ export function SignupPage() {
       <div className="flex flex-col gap-4 p-6 md:p-10 relative z-10">
         <div className="flex justify-center gap-2 md:justify-start">
           <a href="/" aria-label="home" className="flex gap-2 items-center group">
-             {/* Local Brand Logo Placeholder */}
-             <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
+             <div className="w-10 h-10 overflow-hidden flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+               <img 
+                 src={logo} 
+                 alt="Interfere Logo" 
+                 className="w-full h-full object-contain scale-[3] mix-blend-multiply" 
+               />
              </div>
              <span className="font-bold tracking-tight text-xl">Interfere</span>
           </a>

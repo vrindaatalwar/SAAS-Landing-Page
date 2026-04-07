@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Globe } from 'lucide-react';
+import logo from '@/assets/chainforcastlogo.png';
 
 const Footer = () => {
    return (
@@ -9,8 +9,12 @@ const Footer = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-16">
                <div className="col-span-2">
                   <a href="/" className="flex items-center gap-2 mb-8">
-                     <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full" />
+                     <div className="w-8 h-8 overflow-hidden flex items-center justify-center">
+                        <img 
+                           src={logo} 
+                           alt="Interfere Logo" 
+                           className="w-full h-full object-contain scale-[3] mix-blend-multiply" 
+                        />
                      </div>
                      <span className="font-bold text-xl tracking-tight">Interfere</span>
                   </a>

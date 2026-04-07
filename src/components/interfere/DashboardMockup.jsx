@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Inbox, 
+import logo from '@/assets/chainforcastlogo.png';
+import {
+  Inbox,
   MoreHorizontal,
   Key,
   Plus,
@@ -61,17 +62,21 @@ const DashboardMockup = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-[1440px] mx-auto rounded-3xl border border-slate-200 bg-white shadow-[0_48px_80px_-16px_rgba(56,189,248,0.15),0_0_48px_rgba(56,189,248,0.3)] overflow-hidden flex h-[900px]"
     >
-      <div className="flex w-full h-full"> 
+      <div className="flex w-full h-full">
         {/* Sidebar (Logo Only, No Nav) */}
         <div className="w-16 border-r border-slate-100 flex flex-col items-center py-6 bg-slate-50/30 min-w-[64px]">
-          <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center">
-            <div className="w-2.5 h-2.5 bg-white rounded-full" />
+          <div className="w-9 h-9 overflow-hidden flex items-center justify-center rounded-xl bg-white shadow-sm border border-slate-100">
+            <img
+              src={logo}
+              alt="App Icon"
+              className="w-full h-full object-contain scale-[3] mix-blend-multiply"
+            />
           </div>
         </div>
 
@@ -91,7 +96,7 @@ const DashboardMockup = () => {
                 <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=A" className="w-6 h-6 rounded-full border-2 border-white bg-slate-200" alt="User" />
                 <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=B" className="w-6 h-6 rounded-full border-2 border-white bg-slate-300" alt="User" />
                 <div className="w-6 h-6 rounded-full border-2 border-white bg-slate-50 flex items-center justify-center text-[10px] text-slate-400 font-bold">
-                   <Plus className="w-3 h-3" />
+                  <Plus className="w-3 h-3" />
                 </div>
               </div>
               <div className="h-4 w-px bg-slate-200 mx-1" />
@@ -109,16 +114,16 @@ const DashboardMockup = () => {
               <div className="flex-1 overflow-hidden p-12 bg-white pb-6 relative">
                 {/* Issue Header */}
                 <div className="flex flex-col items-start gap-4 mb-10">
-                   <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100/50 shadow-sm">
-                      <Key className="w-6 h-6 text-slate-300 transform rotate-45" />
-                   </div>
-                   <div className="space-y-1">
-                      <span className="text-[11px] font-bold text-slate-300 tracking-wider">#120</span>
-                      <h1 className="text-3xl font-bold tracking-tight text-slate-900">Broken Password Reset Link</h1>
-                   </div>
-                   <p className="text-sm text-slate-500 max-w-xl leading-relaxed font-medium">
-                     A spike in users clicking on reset links but not completing the reset flow was detected. Error rates surged within ten minutes of the latest deployment.
-                   </p>
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100/50 shadow-sm">
+                    <Key className="w-6 h-6 text-slate-300 transform rotate-45" />
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-bold text-slate-300 tracking-wider">#120</span>
+                    <h1 className="text-3xl font-bold tracking-tight text-slate-900">Broken Password Reset Link</h1>
+                  </div>
+                  <p className="text-sm text-slate-500 max-w-xl leading-relaxed font-medium">
+                    A spike in users clicking on reset links but not completing the reset flow was detected. Error rates surged within ten minutes of the latest deployment.
+                  </p>
                 </div>
 
                 {/* Simplified Label (Static) */}
@@ -140,8 +145,8 @@ const DashboardMockup = () => {
                       )}
                       <div className="space-y-2 flex-1">
                         <div className="flex items-center gap-2">
-                           <span className="text-[13px] font-bold text-slate-900">{item.type === 'event' || item.type === 'comment' ? item.title || `${item.user} ${item.type === 'comment' ? 'commented' : ''}` : `${item.user} ${item.action}`}</span>
-                           <span className="text-[11px] font-medium text-slate-300 tracking-tight">{item.time}</span>
+                          <span className="text-[13px] font-bold text-slate-900">{item.type === 'event' || item.type === 'comment' ? item.title || `${item.user} ${item.type === 'comment' ? 'commented' : ''}` : `${item.user} ${item.action}`}</span>
+                          <span className="text-[11px] font-medium text-slate-300 tracking-tight">{item.time}</span>
                         </div>
                         {item.content && (
                           <div className={`${item.type === 'comment' ? 'p-3 bg-slate-50 border border-slate-100 rounded-2xl text-[13px] text-slate-600 max-w-md font-medium shadow-sm' : 'text-[13px] text-slate-500 leading-relaxed max-w-lg'}`}>{item.content}</div>
@@ -154,10 +159,10 @@ const DashboardMockup = () => {
 
               {/* Comment Input */}
               <div className="px-12 pb-12 pt-0 bg-white relative z-20">
-                 <div className="flex items-center gap-3 p-2 bg-slate-50/50 border border-slate-200/60 rounded-2xl shadow-sm focus-within:bg-white focus-within:border-slate-400 focus-within:shadow-md transition-all duration-300">
-                    <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSendComment()} placeholder="Leave a comment" className="bg-transparent border-none focus:ring-0 outline-none ring-0 text-[13px] font-medium flex-1 px-4 py-1.5" />
-                    <button onClick={handleSendComment} disabled={!commentText.trim()} className={`px-5 py-2 transition-all text-[11px] font-bold rounded-xl ${commentText.trim() ? 'bg-black text-white hover:bg-slate-800' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}>Send</button>
-                 </div>
+                <div className="flex items-center gap-3 p-2 bg-slate-50/50 border border-slate-200/60 rounded-2xl shadow-sm focus-within:bg-white focus-within:border-slate-400 focus-within:shadow-md transition-all duration-300">
+                  <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSendComment()} placeholder="Leave a comment" className="bg-transparent border-none focus:ring-0 outline-none ring-0 text-[13px] font-medium flex-1 px-4 py-1.5" />
+                  <button onClick={handleSendComment} disabled={!commentText.trim()} className={`px-5 py-2 transition-all text-[11px] font-bold rounded-xl ${commentText.trim() ? 'bg-black text-white hover:bg-slate-800' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}>Send</button>
+                </div>
               </div>
             </div>
 

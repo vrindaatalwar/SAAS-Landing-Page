@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
+import logo from '@/assets/chainforcastlogo.png';
 
 export function WaitlistPage() {
   const [email, setEmail] = useState("");
@@ -38,13 +39,15 @@ export function WaitlistPage() {
         }} 
       />
 
-      {/* Top Center Logo */}
-      <div className="relative z-10 w-full flex justify-center py-10">
-        <a href="/" className="group flex items-center justify-center p-2 rounded-lg hover:bg-slate-50/50 transition-colors">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="transition-transform duration-300 group-hover:rotate-12">
-            <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="black" />
-            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white" />
-          </svg>
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 z-20">
+        <a href="/" className="flex items-center gap-2 group">
+          <div className="w-10 h-10 overflow-hidden flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+            <img 
+              src={logo} 
+              alt="Interfere Logo" 
+              className="w-full h-full object-contain scale-[3] mix-blend-multiply" 
+            />
+          </div>
         </a>
       </div>
 
