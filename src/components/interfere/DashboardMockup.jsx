@@ -35,14 +35,6 @@ const DashboardMockup = () => {
       action: 'set Priority to High',
       time: '31 min ago',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Luke'
-    },
-    {
-      id: 4,
-      type: 'comment',
-      user: 'Luke Shiels',
-      time: '30 min ago',
-      content: 'Can you take a look at this please?',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Luke'
     }
   ]);
 
@@ -114,7 +106,7 @@ const DashboardMockup = () => {
           <div className="flex-1 flex min-h-0 overflow-hidden">
             {/* Feed Column */}
             <div className="flex-1 flex flex-col min-w-0 border-r border-slate-100">
-              <div className="flex-1 overflow-y-auto p-12 bg-white scrollbar-hide pb-6 relative">
+              <div className="flex-1 overflow-hidden p-12 bg-white pb-6 relative">
                 {/* Issue Header */}
                 <div className="flex flex-col items-start gap-4 mb-10">
                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100/50 shadow-sm">
@@ -161,7 +153,7 @@ const DashboardMockup = () => {
               </div>
 
               {/* Comment Input */}
-              <div className="p-6 bg-white/80 backdrop-blur-md border-t border-slate-50 relative z-20">
+              <div className="px-12 pb-12 pt-0 bg-white relative z-20">
                  <div className="flex items-center gap-3 p-2 bg-slate-50/50 border border-slate-200/60 rounded-2xl shadow-sm focus-within:bg-white focus-within:border-slate-400 focus-within:shadow-md transition-all duration-300">
                     <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSendComment()} placeholder="Leave a comment" className="bg-transparent border-none focus:ring-0 outline-none ring-0 text-[13px] font-medium flex-1 px-4 py-1.5" />
                     <button onClick={handleSendComment} disabled={!commentText.trim()} className={`px-5 py-2 transition-all text-[11px] font-bold rounded-xl ${commentText.trim() ? 'bg-black text-white hover:bg-slate-800' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}>Send</button>
@@ -170,7 +162,7 @@ const DashboardMockup = () => {
             </div>
 
             {/* Right Sidebar (Static) */}
-            <div className="w-[280px] bg-slate-50/20 p-8 flex flex-col min-w-[280px] overflow-y-auto scrollbar-hide">
+            <div className="w-[280px] bg-slate-50/20 p-8 flex flex-col min-w-[280px] overflow-hidden">
               <div className="space-y-8 h-full flex flex-col">
                 <div className="grid grid-cols-2 gap-y-6">
                   <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Title</span><p className="text-[12px] font-semibold text-slate-900 leading-tight">Broken password reset link</p></div>

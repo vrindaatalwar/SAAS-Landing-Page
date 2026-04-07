@@ -10,6 +10,8 @@ import ChangelogSection from './components/interfere/ChangelogSection';
 import Footer from './components/interfere/Footer';
 import { LoginPage } from './components/ui/login-page';
 import { SignupPage } from './components/ui/signup-page';
+import { DemoPage } from './components/ui/demo-page';
+import { WaitlistPage } from './components/ui/waitlist-page';
 
 function App() {
   const [toast, setToast] = useState(null);
@@ -25,7 +27,7 @@ function App() {
       if (key === 'l') {
         navigate('/login');
       } else if (key === 'd') {
-        setToast({ message: "Demo Page — Coming Soon", type: "demo" });
+        navigate('/demo');
       }
     };
 
@@ -62,6 +64,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/demo" element={<DemoPage />} />
+        <Route path="/waitlist" element={<WaitlistPage />} />
         <Route path="/" element={
           <AnimatePresence mode="wait">
             <motion.div key={location.pathname}>
@@ -80,10 +84,10 @@ function App() {
                       Build software that <br /> never <span className="font-serif italic font-normal tracking-tight">breaks</span>
                     </h2>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <button className="px-8 py-3 bg-white border border-slate-200 text-slate-900 rounded-xl font-medium hover:bg-slate-50 transition-colors shadow-sm">
+                      <button onClick={() => navigate('/waitlist')} className="px-8 py-3 bg-white border border-slate-200 text-slate-900 rounded-xl font-medium hover:bg-slate-50 transition-colors shadow-sm">
                         Join waitlist
                       </button>
-                      <button onClick={() => setToast({ message: "Demo Page — Coming Soon", type: "demo" })} className="px-8 py-3 bg-black text-white rounded-xl font-medium hover:bg-slate-800 transition-colors shadow-lg">
+                      <button onClick={() => navigate('/demo')} className="px-8 py-3 bg-black text-white rounded-xl font-medium hover:bg-slate-800 transition-colors shadow-lg">
                         Request a demo
                       </button>
                     </div>
