@@ -22,9 +22,9 @@ const InboxMockup = () => (
     </header>
     <div className="p-4 grid grid-cols-3 gap-4 h-full">
       {[
-        { title: "INVESTIGATING", color: "bg-orange-500", count: 2 },
-        { title: "QUEUED", color: "bg-blue-500", count: 3 },
-        { title: "RESOLVED", color: "bg-emerald-500", count: 8 }
+        { title: "ANALYZING", color: "bg-orange-500", count: 2 },
+        { title: "FORECASTING", color: "bg-blue-500", count: 3 },
+        { title: "ACTIONED", color: "bg-emerald-500", count: 8 }
       ].map((column) => (
         <div key={column.title} className="flex flex-col gap-3">
           <div className="flex items-center gap-2 px-1">
@@ -82,32 +82,27 @@ const CodeMockup = () => (
   <div className="flex flex-col h-full bg-white text-slate-900 font-mono text-xs">
     <header className="h-10 border-b border-slate-100 flex items-center px-4 gap-4 bg-slate-50/50">
       <Code className="w-3.5 h-3.5 text-slate-400" />
-      <span className="text-slate-400 font-bold text-[10px] tracking-tight">Fix: broken-password-reset.ts</span>
+      <span className="text-slate-400 font-bold text-[10px] tracking-tight">Action: loyalty-campaign-v1</span>
     </header>
     <div className="flex-1 p-6 space-y-4">
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
-          <span className="text-pink-600 font-bold">export async function</span>
-          <span className="text-blue-600 font-bold">resetPassword</span>
-          <span className="text-slate-400">(</span>
+          <span className="text-pink-600 font-bold">campaign</span>
+          <span className="text-blue-600 font-bold">"Champions Early Access"</span>
+          <span className="text-slate-400">&#123;</span>
         </div>
       </div>
       <div className="flex flex-col gap-1.5 pl-4 bg-emerald-50/50 border-l-2 border-emerald-500 py-3 rounded-r-lg">
         <div className="flex items-center gap-2">
-          <span className="text-slate-400 font-medium">- const url = new URL('/incorrect-route')</span>
+          <span className="text-emerald-600 font-bold">  target: ["RFM_Champions"],</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-emerald-600 font-bold">+ const url = new URL('/api/auth/reset')</span>
+          <span className="text-emerald-600 font-bold">  reward: "Exclusive_Catalog_A",</span>
         </div>
       </div>
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
-          <span className="text-slate-400 font-medium">)</span>
-        </div>
-        <div className="flex items-center gap-2 mt-4">
-          <span className="text-pink-600 font-bold">return</span>
-          <span className="text-blue-600 font-bold">url</span>
-          <span className="text-slate-900">.toString();</span>
+          <span className="text-slate-400 font-medium">&#125;</span>
         </div>
       </div>
     </div>
@@ -117,9 +112,9 @@ const CodeMockup = () => (
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
           <div className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping opacity-30" />
         </div>
-        <span className="text-slate-400 font-bold text-[10px] uppercase tracking-wider">Proposed fix validated</span>
+        <span className="text-slate-400 font-bold text-[10px] uppercase tracking-wider">Prescribed action validated</span>
       </div>
-      <button className="px-4 py-1.5 bg-black text-white rounded-lg font-bold text-[10px] shadow-sm hover:bg-slate-800 transition-colors">Create PR</button>
+      <button className="px-4 py-1.5 bg-black text-white rounded-lg font-medium text-[10px] shadow-sm hover:bg-slate-800 transition-colors">Launch Campaign</button>
     </div>
   </div>
 );
@@ -129,7 +124,7 @@ const FeatureDetail = ({ title, description, step, children }) => (
     <div className="w-full">
       <div className="text-[10px] font-bold text-sky-500 uppercase tracking-wide mb-4">0{step}</div>
       <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-4">{title}</h2>
-      <p className="text-base text-slate-500 leading-relaxed font-medium mb-10">{description}</p>
+      <p className="text-base text-slate-500 leading-relaxed font-medium mb-7">{description}</p>
 
       <div className="w-full bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden aspect-[4/3]">
         {children}
@@ -142,9 +137,9 @@ const FeatureDeepDives = () => {
   const steps = [
     {
       id: "1",
-      name: "Listen",
-      title: "Learn about issues before your customers do",
-      description: "Interfere continuously monitors your app and notices when behavior or outcomes change, before errors escalate or users report issues.",
+      name: "Monitor",
+      title: "Autonomous Revenue Monitoring",
+      description: "Nexus continuously monitors your retail data and notices when segment behavior or purchase outcomes change, before revenue leaks.",
       content: <InboxMockup />,
       icon: (
         <motion.svg 
@@ -162,9 +157,9 @@ const FeatureDeepDives = () => {
     },
     {
       id: "2",
-      name: "Analyze",
-      title: "Understand what's going wrong",
-      description: "Interfere goes beyond logs, metrics, and traces. It finds the root cause and explains what's broken, why, and who it impacts.",
+      name: "Diagnose",
+      title: "Diagnostic Segment Analysis",
+      description: "Nexus goes beyond raw numbers. It performs diagnostic analytics to find the root cause of churn and explains what's happening and why.",
       content: <AnalysisMockup />,
       icon: (
         <motion.svg 
@@ -182,9 +177,9 @@ const FeatureDeepDives = () => {
     },
     {
       id: "3",
-      name: "Fix",
-      title: "Fix problems with confidence",
-      description: "Interfere takes the solution from root cause to PR. It suggests the fix, tests it locally, and submits it for review.",
+      name: "Act",
+      title: "Prescriptive Growth Actions",
+      description: "Nexus turns insight into prescriptive action by suggesting campaigns, pricing adjustments, and stock reorders that drive measurable ROI.",
       content: <CodeMockup />,
       icon: (
         <motion.svg 

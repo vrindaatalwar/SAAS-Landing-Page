@@ -9,22 +9,22 @@ const Footer = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-16">
                <div className="col-span-2">
                   <a href="/" className="flex items-center gap-2 mb-8">
-                     <div className="w-8 h-8 overflow-hidden flex items-center justify-center">
+                     <div className="w-10 h-10 overflow-hidden flex items-center justify-center">
                         <img 
                            src={logo} 
-                           alt="Interfere Logo" 
-                           className="w-full h-full object-contain scale-[3] mix-blend-multiply" 
+                           alt="Nexus Logo" 
+                           className="w-full h-full object-contain scale-[3] mix-blend-multiply opacity-80" 
                         />
                      </div>
-                     <span className="font-bold text-xl tracking-tight">Interfere</span>
+                     <span className="font-bold text-xl tracking-tight">Nexus</span>
                   </a>
                   <p className="text-sm text-slate-500 max-w-sm mb-8 leading-relaxed">
-                     The experience layer for modern product teams. Detect, triage, and fix bugs automatically.
+                     The autonomous revenue intelligence layer for modern retail. Detect leakage, diagnose segments, and prescribe growth actions automatically.
                   </p>
                   <div className="flex items-center gap-4">
                      <span className="text-xs font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-2 py-1 rounded flex items-center gap-2">
                         <Globe className="w-3 h-3 text-emerald-500" />
-                        All systems operational
+                        Intelligence Active
                      </span>
                   </div>
                </div>
@@ -61,7 +61,7 @@ const Footer = () => {
 
             <div className="pt-6 border-t border-slate-100 flex flex-col items-center text-center text-slate-400">
                <div className="text-[10px] font-bold uppercase tracking-widest w-full max-w-xs">
-                  © 2026 Interfere Corp. All rights reserved.
+                  © 2026 Nexus Corp. All rights reserved.
                </div>
             </div>
          </div>

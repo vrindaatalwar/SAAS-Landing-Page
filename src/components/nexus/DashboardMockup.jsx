@@ -13,27 +13,27 @@ import {
 
 const DashboardMockup = () => {
   const [commentText, setCommentText] = useState('');
-  const [userCount, setUserCount] = useState(12938);
+  const [userCount, setUserCount] = useState(42955);
   const [comments, setComments] = useState([
     {
       id: 1,
       type: 'event',
-      title: 'New issue detected',
+      title: 'Segment growth detected',
       time: '36 min ago',
-      content: 'Interfere flagged the incident after observing a surge in failed password reset attempts. Metrics showed a spike in users clicking on reset links but not completing the flow. Error rates crossed the anomaly threshold within ten minutes of deployment.'
+      content: 'Nexus flagged a 12% increase in the "Champions" segment following the Premium Early Access campaign. Recency scores improved across 85% of newly transitioned users, indicating high campaign resonance.'
     },
     {
       id: 2,
       type: 'event',
-      title: 'Session analysis',
+      title: 'LTV prediction update',
       time: '35 min ago',
-      content: 'Password reset links were clicked successfully, but users never reached the final "Password updated" confirmation screen.'
+      content: 'Predicted Lifetime Value for this segment has increased by $2.4M. Expected purchase frequency for the next 4 weeks is forecasted at 2.8x higher than the Q1 baseline.'
     },
     {
       id: 3,
       type: 'action',
       user: 'Luke Shiels',
-      action: 'set Priority to High',
+      action: 'set Segment Priority to Critical',
       time: '31 min ago',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Luke'
     }
@@ -86,9 +86,9 @@ const DashboardMockup = () => {
           <header className="h-14 border-b border-slate-100 flex items-center justify-between px-6 bg-white/50 backdrop-blur-sm sticky top-0 z-30">
             <div className="flex items-center gap-4 text-[13px]">
               <Inbox className="w-4 h-4 text-slate-400" />
-              <span className="font-medium text-slate-400">Inbox</span>
+              <span className="font-medium text-slate-400">Marketing</span>
               <span className="text-slate-200 text-lg">/</span>
-              <span className="font-semibold text-slate-900">Broken Password Reset Link</span>
+              <span className="font-semibold text-slate-900">Customer Segmentation (RFM)</span>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex -space-x-1.5">
@@ -102,7 +102,7 @@ const DashboardMockup = () => {
               <div className="h-4 w-px bg-slate-200 mx-1" />
               <div className="flex items-center gap-2 px-2.5 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-[11px] font-bold text-slate-600">
                 <div className="w-2 h-2 rounded-full bg-slate-400" />
-                Subscribed
+                Live Analysis
               </div>
               <MoreHorizontal className="w-5 h-5 text-slate-300 cursor-pointer hover:text-slate-600 transition-colors" />
             </div>
@@ -115,21 +115,21 @@ const DashboardMockup = () => {
                 {/* Issue Header */}
                 <div className="flex flex-col items-start gap-4 mb-10">
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100/50 shadow-sm">
-                    <Key className="w-6 h-6 text-slate-300 transform rotate-45" />
+                    <Zap className="w-6 h-6 text-slate-300" />
                   </div>
                   <div className="space-y-1">
-                    <span className="text-[11px] font-bold text-slate-300 tracking-wider">#120</span>
-                    <h1 className="text-3xl font-bold tracking-tight text-slate-900">Broken Password Reset Link</h1>
+                    <span className="text-[11px] font-bold text-slate-300 tracking-wider text-sky-500 uppercase">Segment Analysis</span>
+                    <h1 className="text-3xl font-bold tracking-tight text-slate-900">Champions Segment</h1>
                   </div>
                   <p className="text-sm text-slate-500 max-w-xl leading-relaxed font-medium">
-                    A spike in users clicking on reset links but not completing the reset flow was detected. Error rates surged within ten minutes of the latest deployment.
+                    High recency, frequency, and monetary value. This 12% of your customer base drives 45% of total revenue. Recommended: Loyalty programs and exclusive early access.
                   </p>
                 </div>
 
                 {/* Simplified Label (Static) */}
                 <div className="flex items-center gap-8 border-b border-slate-100 mb-10 text-[13px] font-bold relative">
                   <div className="py-3 relative text-black border-b-[2px] border-black">
-                    Activity
+                    Diagnostic Insights
                   </div>
                 </div>
 
@@ -160,8 +160,8 @@ const DashboardMockup = () => {
               {/* Comment Input */}
               <div className="px-12 pb-12 pt-0 bg-white relative z-20">
                 <div className="flex items-center gap-3 p-2 bg-slate-50/50 border border-slate-200/60 rounded-2xl shadow-sm focus-within:bg-white focus-within:border-slate-400 focus-within:shadow-md transition-all duration-300">
-                  <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSendComment()} placeholder="Leave a comment" className="bg-transparent border-none focus:ring-0 outline-none ring-0 text-[13px] font-medium flex-1 px-4 py-1.5" />
-                  <button onClick={handleSendComment} disabled={!commentText.trim()} className={`px-5 py-2 transition-all text-[11px] font-bold rounded-xl ${commentText.trim() ? 'bg-black text-white hover:bg-slate-800' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}>Send</button>
+                  <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSendComment()} placeholder="Ask the analyzer a question..." className="bg-transparent border-none focus:ring-0 outline-none ring-0 text-[13px] font-medium flex-1 px-4 py-1.5" />
+                  <button onClick={handleSendComment} disabled={!commentText.trim()} className={`px-5 py-2 transition-all text-[11px] font-bold rounded-xl ${commentText.trim() ? 'bg-black text-white hover:bg-slate-800' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}>Ask AI</button>
                 </div>
               </div>
             </div>
@@ -170,18 +170,14 @@ const DashboardMockup = () => {
             <div className="w-[280px] bg-slate-50/20 p-8 flex flex-col min-w-[280px] overflow-hidden">
               <div className="space-y-8 h-full flex flex-col">
                 <div className="grid grid-cols-2 gap-y-6">
-                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Title</span><p className="text-[12px] font-semibold text-slate-900 leading-tight">Broken password reset link</p></div>
-                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">ID</span><p className="text-[12px] font-semibold text-slate-900"># 120</p></div>
-                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Priority</span><div className="flex items-center gap-1.5 text-slate-900 font-bold"><Zap className="w-3 h-3 text-slate-400 fill-slate-400" /><span className="text-[12px]">High</span></div></div>
-                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Assignee</span><div className="flex items-center gap-1.5"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Luke" className="w-4 h-4 rounded-full" alt="" /><span className="text-[12px] font-semibold truncate">Luke Shiels</span></div></div>
-                </div>
-                <div className="pt-8 border-t border-slate-100 flex flex-col gap-4">
-                  <div className="flex justify-between items-center"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">First seen</span><span className="text-[12px] font-medium text-slate-700">36 minutes ago</span></div>
-                  <div className="flex justify-between items-center"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Last seen</span><span className="text-[12px] font-medium text-slate-700">Just now</span></div>
+                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Status</span><p className="text-[12px] font-semibold text-slate-900 leading-tight">Top Value</p></div>
+                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Owner</span><div className="flex items-center gap-1.5"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Luke" className="w-4 h-4 rounded-full" alt="" /><span className="text-[12px] font-semibold truncate">Marketing Team</span></div></div>
+                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Created</span><p className="text-[12px] font-semibold text-slate-900">Q1 Baseline</p></div>
+                  <div className="space-y-1.5"><span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Sync</span><p className="text-[12px] font-semibold text-slate-900">Latest Sync</p></div>
                 </div>
                 <div className="pt-12 mt-auto">
                   <div className="space-y-1 mb-6">
-                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.15em]">Impacted Users</span>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.15em]">Active Customers</span>
                     <p className="text-xl font-bold tracking-tighter text-slate-900">{userCount.toLocaleString()}</p>
                   </div>
                   <div className="relative w-full h-32 group">

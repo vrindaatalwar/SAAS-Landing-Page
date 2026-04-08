@@ -43,7 +43,7 @@ const MockupOne = () => {
               className="p-3 bg-white rounded-lg border border-orange-100 flex flex-col items-center pointer-events-auto"
             >
               <span className="text-[10px] font-bold text-orange-600 uppercase tracking-widest mb-1">
-                Reset password link
+                High-value segment
               </span>
               <div className="w-32 h-16 bg-orange-50/50 rounded border border-orange-100/50" />
             </motion.div>
@@ -69,8 +69,8 @@ const MockupTwo = () => (
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 8v4M12 16h.01M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" /></svg>
         </div>
         <div>
-          <p className="text-[10px] font-bold text-slate-400 tracking-wide mb-1">#112</p>
-          <h4 className="text-sm font-bold text-slate-800">Reset password flow issue</h4>
+          <p className="text-[10px] font-bold text-slate-400 tracking-wide mb-1">DATA SIGNAL</p>
+          <h4 className="text-sm font-bold text-slate-800">Unusual conversion drop</h4>
         </div>
       </div>
       <div className="flex gap-3">
@@ -302,25 +302,25 @@ const ValueProp = () => {
         className="max-w-7xl mx-auto"
       >
         {/* Headline Section - Time-Staggered Animation */}
-        <div className="max-w-4xl mb-32">
+        <div className="max-w-5xl mb-32">
           <motion.h2
-            className="text-2xl md:text-3xl lg:text-[42px] font-medium tracking-tight leading-[1.3] select-none"
+            className="text-2xl md:text-3xl lg:text-[42px] font-medium tracking-tight leading-[1.4] select-none"
           >
             {/* Line 01 */}
-            <motion.span variants={line1Variants} className="block">
-              Interfere {' '}
+            <motion.span variants={line1Variants} className="block md:whitespace-nowrap">
+              Nexus {' '}
               <motion.span
                 variants={highlight1Variants}
                 className="inline-block px-1.5 py-0 rounded-md"
               >
-                finds
+                reveals
               </motion.span>
               <sup className="text-[11px] font-bold opacity-30 ml-1 tracking-wide">01</sup>
-              {' '} issues in your app,
+              {' '} hidden growth opportunities,
             </motion.span>
 
             {/* Line 02 */}
-            <motion.span variants={line2Variants} className="block">
+            <motion.span variants={line2Variants} className="block md:whitespace-nowrap">
               <motion.span
                 variants={highlight2Variants}
                 className="inline-block px-1.5 py-0 rounded-md"
@@ -328,19 +328,20 @@ const ValueProp = () => {
                 understands
               </motion.span>
               <sup className="text-[11px] font-bold opacity-30 ml-1 tracking-wide">02</sup>
-              {' '} what's happening, and owns
+              {' '} exactly why KPIs are shifting,
             </motion.span>
 
             {/* Line 03 */}
-            <motion.span variants={line3Variants} className="block">
+            <motion.span variants={line3Variants} className="block md:whitespace-nowrap">
+              and {' '}
               <motion.span
                 variants={highlight3Variants}
                 className="inline-block px-1.5 py-0 rounded-md"
               >
-                resolution
+                prescribes
               </motion.span>
               <sup className="text-[11px] font-bold opacity-30 ml-1 tracking-wide">03</sup>
-              {' '} from first signal to production.
+              {' '} high-ROI actions.
             </motion.span>
           </motion.h2>
         </div>
@@ -361,9 +362,9 @@ const ValueProp = () => {
               <MockupOne />
               <div className="mt-10">
                 <span className="text-[10px] font-bold text-slate-400 tracking-wide mb-4 block uppercase leading-none">01</span>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 transition-colors">Learn about issues before your customers do</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 transition-colors">Detect hidden growth opportunities</h3>
                 <p className="text-sm text-slate-500 leading-relaxed max-w-[280px]">
-                  Interfere continuously monitors your app and notices when behavior or outcomes change, before errors escalate or users report issues.
+                  Nexus continuously monitors your retail data and notices when segment behavior or purchase outcomes change, before revenue leaks.
                 </p>
               </div>
             </motion.div>
@@ -380,9 +381,9 @@ const ValueProp = () => {
               <MockupTwo />
               <div className="mt-10">
                 <span className="text-[10px] font-bold text-slate-400 tracking-wide mb-4 block uppercase leading-none">02</span>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 transition-colors">Understand what's going wrong</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 transition-colors">Diagnose exactly what changed</h3>
                 <p className="text-sm text-slate-500 leading-relaxed max-w-[280px]">
-                  Interfere goes beyond logs, metrics, and traces. It finds the root cause and explains what's broken, why, and who it impacts.
+                  Nexus goes beyond raw numbers. It performs diagnostic analytics to find the root cause of churn and explains what's happening and why.
                 </p>
               </div>
             </motion.div>
@@ -399,9 +400,9 @@ const ValueProp = () => {
               <MockupThree />
               <div className="mt-10">
                 <span className="text-[10px] font-bold text-slate-400 tracking-wide mb-4 block uppercase leading-none">03</span>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 transition-colors">Fix problems with confidence</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 transition-colors">Act with absolute confidence</h3>
                 <p className="text-sm text-slate-500 leading-relaxed max-w-[280px]">
-                  Interfere turns insight into action by suggesting fixes, linking them to your codebase, and tracking progress until resolved. You're always in control.
+                  Nexus turns insight into prescriptive action by suggesting campaigns, pricing adjustments, and stock reorders that drive measurable ROI.
                 </p>
               </div>
             </motion.div>

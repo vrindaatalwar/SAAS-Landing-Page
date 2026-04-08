@@ -271,14 +271,14 @@ export function SignupPage() {
       <div className="flex flex-col gap-4 p-6 md:p-10 relative z-10">
         <div className="flex justify-center gap-2 md:justify-start">
           <a href="/" aria-label="home" className="flex gap-2 items-center group">
-             <div className="w-10 h-10 overflow-hidden flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+             <div className="w-12 h-12 overflow-hidden flex items-center justify-center">
                <img 
                  src={logo} 
-                 alt="Interfere Logo" 
-                 className="w-full h-full object-contain scale-[3] mix-blend-multiply" 
+                 alt="Nexus Logo" 
+                 className="w-full h-full object-contain scale-[3.5] mix-blend-multiply" 
                />
              </div>
-             <span className="font-bold tracking-tight text-xl">Interfere</span>
+             <span className="font-bold tracking-tight text-xl">Nexus</span>
           </a>
         </div>
         <div className="flex flex-1 w-full items-center justify-center">
@@ -289,7 +289,7 @@ export function SignupPage() {
                   <div className="flex flex-col items-center gap-1 text-center mb-4">
                     <h1 className="text-3xl font-bold tracking-tight text-slate-900">Create your account</h1>
                     <p className="text-muted-foreground text-sm text-balance">
-                      Join Interfere to start building software that never breaks
+                      Join Nexus to start Maximizing Revenue
                     </p>
                   </div>
                   
@@ -306,7 +306,7 @@ export function SignupPage() {
 
                   <Field>
                     <FieldLabel htmlFor="email">Email</FieldLabel>
-                    <Input id="email" type="email" placeholder="contact@interfere.app" required className="h-11 rounded-xl" />
+                    <Input id="email" type="email" placeholder="contact@nexus.app" required className="h-11 rounded-xl" />
                   </Field>
                   
                   <Field>
@@ -320,13 +320,13 @@ export function SignupPage() {
                   </Field>
 
                   <Field className="pt-2">
-                    <Button type="submit" className="w-full bg-sky-500 text-white hover:bg-sky-600 h-12 rounded-xl font-bold shadow-xl shadow-sky-100/50">Next</Button>
+                    <Button type="submit" className="w-full h-11 bg-black text-white rounded-xl font-medium text-sm hover:bg-slate-800 transition-all shadow-lg">Create account</Button>
                   </Field>
                   
                   <FieldSeparator>Or continue with</FieldSeparator>
                   
                   <Field>
-                    <Button className="flex gap-2 w-full h-12 rounded-xl border-slate-200 hover:bg-slate-50" variant="outline" type="button">
+                    <Button className="flex gap-2 w-full h-12 rounded-xl border-slate-200 hover:bg-slate-50 font-medium" variant="outline" type="button">
                        <Google className="w-5 h-5" /> <span>Login with Google </span>
                     </Button>
                     <FieldDescription className="text-center mt-6">
@@ -351,7 +351,7 @@ export function SignupPage() {
                 </div>
                 <Button 
                   onClick={() => window.location.href = '/login'} 
-                  className="w-full max-w-[240px] bg-sky-500 text-white hover:bg-sky-600 h-12 rounded-xl font-bold shadow-xl shadow-sky-100/50"
+                  className="w-full max-w-[240px] bg-sky-500 text-white hover:bg-sky-600 h-12 rounded-xl font-medium shadow-xl shadow-sky-100/50"
                 >
                   Go to Login
                 </Button>

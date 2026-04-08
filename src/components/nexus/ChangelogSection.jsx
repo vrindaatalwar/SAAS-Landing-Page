@@ -17,7 +17,7 @@ const ChangelogSection = () => {
       {
          date: "FEB 1, 2026",
          title: "OAuth applications & scoped API keys",
-         description: "Today, we've launched support for developers to create custom OAuth applications and API keys with granular scopes on Interfere."
+         description: "Today, we've launched support for developers to create custom OAuth applications and API keys with granular scopes on Nexus."
       }
    ];
 
