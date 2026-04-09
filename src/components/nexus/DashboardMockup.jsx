@@ -117,12 +117,12 @@ const DashboardMockup = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-[1440px] mx-auto rounded-3xl border border-slate-100 bg-white shadow-[0_48px_80px_-16px_rgba(56,189,248,0.15),0_0_48px_rgba(56,189,248,0.3)] overflow-hidden flex h-[900px]"
+      className="w-full max-w-[1440px] mx-auto rounded-3xl border border-slate-100  shadow-[0_48px_80px_-16px_rgba(56,189,248,0.15),0_0_48px_rgba(56,189,248,0.3)] overflow-hidden flex h-[900px]"
     >
       <div className="flex w-full h-full">
         {/* Sidebar (Logo Only, No Nav) */}
         <div className="w-16 border-r border-slate-100 flex flex-col items-center py-2 min-w-[64px]">
-          <div className="w-10 h-10 overflow-hidden flex items-center justify-center rounded-2xl bg-white shadow-[0,1,1,0] border border-slate-100">
+          <div className="w-10 h-10 overflow-hidden flex items-center justify-center rounded-2xlshadow-[0,1,1,0] border border-slate-100">
             <img
               src={logo}
               alt="App Icon"

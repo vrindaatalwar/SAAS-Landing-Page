@@ -19,10 +19,10 @@ const Hero = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-[64px] font-bold tracking-tighter text-slate-900 leading-[0.95]"
+              className="text-4xl md:text-5xl lg:text-[64px] font-bold tracking-tighter text-slate-900"
             >
               <Balancer>
-                Turn retail data into customer <span className="font-serif italic font-normal tracking-tight">growth</span>
+                Turn retail data into customer <span className="font-serif text-[4.00rem] italic font-normal tracking-[-0.055em]">Growth</span>
               </Balancer>
             </motion.h1>
 
@@ -36,10 +36,10 @@ const Hero = () => {
                 Autonomous revenue layer for retail. Detect, diagnose, and prescribe growth actions with RFM intelligence.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 mt-7 lg:-translate-y-5">
-                <button onClick={() => navigate('/waitlist')} className="px-8 py-3.5 bg-white border border-slate-200 text-slate-900 rounded-xl font-medium hover:bg-slate-50 transition-colors shadow-sm text-sm">
+                <button onClick={() => navigate('/waitlist')} className="px-8 py-3.5 bg-white border  border-slate-200 text-slate-900 rounded-xl font-medium hover:bg-slate-50 transition-colors shadow-sm text-sm">
                   Join waitlist
                 </button>
-                <button onClick={() => navigate('/demo')} className="px-8 py-3.5 bg-black text-white rounded-xl font-medium hover:bg-slate-800 transition-colors shadow-lg text-sm">
+                <button onClick={() => navigate('/demo')} className="px-8 py-3.5 bg-black text-white rounded-xl font-medium hover:shadow-md transition-colors shadow-sm text-sm">
                   Request a demo
                 </button>
               </div>

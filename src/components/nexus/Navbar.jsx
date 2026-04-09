@@ -20,13 +20,13 @@ const Navbar = () => {
         </a>
       </div>
 
-      <div className="flex-1 flex items-center justify-end gap-[18px]">
-        <a href="/login" className="hidden sm:flex items-center gap-2 text-[12px] font-medium text-slate-500 hover:text-black transition-colors">
-          Login <span className="px-1.5 py-0.5 rounded border border-slate-200 text-[8px] font-normal text-slate-300 bg-slate-50">L</span>
+      <div className="flex-1 flex items-center justify-end gap-6">
+        <a href="/login" className="hidden sm:flex items-center gap-2.5 text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors duration-200">
+          Login <kbd className="px-2 py-0.5 rounded-md border border-slate-200 text-[11px] font-bold text-slate-400 bg-slate-50/50 shadow-sm flex items-center justify-center font-sans tracking-wide">L</kbd>
         </a>
         <button
           onClick={() => navigate('/demo')}
-          className="px-[19px] py-[9px] bg-black text-white text-[12px] font-medium rounded-xl hover:bg-slate-800 transition-all flex items-center gap-2 shadow-lg shadow-black/10 active:scale-95"
+          className="px-5 py-2.5 bg-black text-white text-sm font-bold rounded-xl hover:shadow-md transition-all duration-200 flex items-center gap-3 shadow-sm shadow-black/10 active:scale-95"
         >
           Request a demo <span className="opacity-30 text-[12px] font-normal">D</span>
         </button>

@@ -88,11 +88,11 @@ export const TestimonialSlider = ({
               beforeEnter={() => heightFix()}
             >
               <div className="flex flex-col gap-4">
-                <div className="text-2xl md:text-3xl font-bold text-sky-900 before:content-['\201C'] after:content-['\201D'] tracking-tight">
+                <div className="text-2xl md:text-3xl font-bold text-sky-600 before:content-['\201C'] after:content-['\201D'] tracking-tight">
                   {testimonial.quote}
                 </div>
                 <div className="flex flex-col items-center">
-                  <span className="text-sm font-bold text-sky-600 uppercase tracking-widest">{testimonial.name}</span>
+                  <span className="text-sm font-bold text-slate-900 uppercase tracking-normal">{testimonial.name}</span>
                   <span className="text-xs font-medium text-slate-400 capitalize">{testimonial.role}</span>
                 </div>
               </div>

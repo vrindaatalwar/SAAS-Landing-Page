@@ -48,7 +48,7 @@ function App() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white font-sans antialiased animate-in">
       <AnimatePresence>
         {toast && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -75,27 +75,7 @@ function App() {
                 <Hero />
                 <ValueProp />
                 <QuoteSection />
-                <FeatureDeepDives />
                 <ChangelogSection />
-
-                {/* Middle CTA Section - Build software that never breaks */}
-                <section className="py-40 bg-zinc-50/50 border-y border-slate-100 text-center overflow-hidden">
-                  <div className="max-w-5xl mx-auto px-6">
-                    <h2 className="text-5xl md:text-8xl font-bold tracking-tight text-slate-900 leading-none mb-10">
-                      <Balancer>
-                        Maximize revenue with autonomous <span className="font-serif italic font-normal tracking-tight">intelligence</span>
-                      </Balancer>
-                    </h2>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <button onClick={() => navigate('/waitlist')} className="px-8 py-3 bg-white border border-slate-200 text-slate-900 rounded-xl font-medium hover:bg-slate-50 transition-colors shadow-sm">
-                        Join waitlist
-                      </button>
-                      <button onClick={() => navigate('/demo')} className="px-8 py-3 bg-black text-white rounded-xl font-medium hover:bg-slate-800 transition-colors shadow-lg">
-                        Request a demo
-                      </button>
-                    </div>
-                  </div>
-                </section>
               </main>
               <Footer />
             </motion.div>

@@ -13,7 +13,7 @@ const duplicatedLogos = [...logos, ...logos, ...logos];
 const LogoCarousel = () => {
   return (
     <div className="relative w-full overflow-hidden mt-32 border-t border-slate-100 pt-16 pb-12 translate-y-[-1px]">
-      <p className="text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase mb-12 text-center">
+      <p className="text-[12px] font-bold text-slate-400 tracking-normal uppercase mb-12 text-center">
         Trusted and funded by
       </p>
 
@@ -38,14 +38,14 @@ const LogoCarousel = () => {
         >
           {duplicatedLogos.map((logo, index) => (
             <div key={index} className="flex items-center gap-3 whitespace-nowrap group cursor-pointer shrink-0">
-               <img 
-                 src={logo.src} 
-                 alt={logo.name} 
-                 className="h-6 w-auto opacity-70 group-hover:opacity-100 transition-opacity" 
-               />
-               <span className="text-sm font-bold tracking-tight text-black group-hover:text-slate-900 transition-colors">
-                 {logo.name}
-               </span>
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="h-6 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+              />
+              <span className="text-sm font-bold tracking-tight text-black group-hover:text-slate-900 transition-colors">
+                {logo.name}
+              </span>
             </div>
           ))}
         </motion.div>
