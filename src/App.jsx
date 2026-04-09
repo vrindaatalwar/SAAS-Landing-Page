@@ -13,6 +13,7 @@ import { SignupPage } from './components/ui/signup-page';
 import { DemoPage } from './components/ui/demo-page';
 import { WaitlistPage } from './components/ui/waitlist-page';
 import Balancer from 'react-wrap-balancer';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [toast, setToast] = useState(null);
@@ -82,6 +83,7 @@ function App() {
           </AnimatePresence>
         } />
       </Routes>
+      <Analytics />
     </div>
   );
 }
