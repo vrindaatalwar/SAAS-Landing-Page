@@ -24,7 +24,7 @@ const testimonials = [
 
 const QuoteSection = () => {
   return (
-    <section className="pt-4 pb-12 md:pb-20 px-6 bg-white overflow-hidden">
+    <section className="pt-24 pb-4 md:pb-20 px-6 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <TestimonialSlider testimonials={testimonials} />
       </div>

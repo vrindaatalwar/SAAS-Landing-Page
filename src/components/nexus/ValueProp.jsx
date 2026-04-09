@@ -187,11 +187,11 @@ const ValueProp = () => {
   // Global Timing for perfect synchronization
   const DURATION = 6;
   const TIMES = [0, 0.25, 0.33, 0.58, 0.66, 0.91, 1.0];
-  const SYNC_TRANSITION = { 
-    duration: DURATION, 
-    times: TIMES, 
-    repeat: Infinity, 
-    ease: "easeInOut" 
+  const SYNC_TRANSITION = {
+    duration: DURATION,
+    times: TIMES,
+    repeat: Infinity,
+    ease: "easeInOut"
   };
 
   const line1Variants = {
@@ -251,7 +251,7 @@ const ValueProp = () => {
       opacity: 1,
       transition: {
         // Stagger removed to ensure looping animations start simultaneously
-        staggerChildren: 0 
+        staggerChildren: 0
       }
     }
   };
@@ -294,7 +294,7 @@ const ValueProp = () => {
 
 
   return (
-    <section className="py-40 px-6 bg-white overflow-hidden">
+    <section className="py-8 px-6 bg-white overflow-hidden">
       <motion.div
         initial="initial"
         whileInView="animate"
@@ -302,7 +302,7 @@ const ValueProp = () => {
         className="max-w-7xl mx-auto"
       >
         {/* Headline Section - Time-Staggered Animation */}
-        <div className="max-w-5xl mb-32">
+        <div className="max-w-5xl mb-24">
           <motion.h2
             className="text-2xl md:text-3xl lg:text-[42px] font-medium tracking-tight leading-[1.4] select-none"
           >
